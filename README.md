@@ -1,5 +1,5 @@
 Instructions :
-- Download MSI_Properties_Viewer.bat and double click to lauch
+- Download MSI_Properties_Viewer.bat and double click to launch
 
 
 ------------------

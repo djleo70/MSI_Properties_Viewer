@@ -1,0 +1,3 @@
+- Self copy in Appdata\Local\Temp to execute itself again from there
+- Write powershell script then execute with -ExecutionPolicy Bypass
+- Compatible from and for network paths

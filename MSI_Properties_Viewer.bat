@@ -4,16 +4,16 @@
     ::========= SETTINGS =========
     set "Powershell_WindowStyle=Hidden"  :: Normal, Hidden, Minimized, Maximized
     set "Show_Loading=true"              :: Show cmd while preparing powershell
-    set "Ensure_Local_Running=true"      :: If not launched from disk 'C', Re-Write in %temp% then execute
-        set "Show_Writing_Lines=false"    :: Show lines writing in %temp% while preparing powershell
-        set "Debug_Writting_Lines=false" :: Pause between each line writing (press a key to see next line)
+;   set "Ensure_Local_Running=true"      :: If not launched from disk 'C', Re-Write in %temp% then execute
+;       set "Show_Writing_Lines=false"    :: Show lines writing in %temp% while preparing powershell
+;       set "Debug_Writting_Lines=false" :: Pause between each line writing (press a key to see next line)
     ::============================
-
-    if "%Show_Writing_Lines%"=="true" set "Show_Loading=true"
-    if "%Debug_Writting_Lines%"=="true" set "Show_Loading=true" && set "Show_Writing_Lines=true"
+;
+;   if "%Show_Writing_Lines%"=="true" set "Show_Loading=true"
+;   if "%Debug_Writting_Lines%"=="true" set "Show_Loading=true" && set "Show_Writing_Lines=true"
     if "%Show_Loading%"=="false" (
         if not DEFINED IS_MINIMIZED set IS_MINIMIZED=1 && start "" /min "%~dpnx0" %* && exit
-        ) else (if "%Show_Writing_Lines%"=="false" if "%Powershell_WindowStyle%"=="Hidden" mode con: cols=55 lines=3)
+        ) else (mode con: cols=55 lines=3)
     echo. & echo  Loading...
 ;   if "%Ensure_Local_Running%"=="true" if "%~d0" NEQ "C:" ((
 ;       for /f "eol=; usebackq delims=" %%k in ("%~f0") do (
